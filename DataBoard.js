@@ -5,8 +5,6 @@ const redHTML = '<img ondragstart="onDragStart(event)" ondragend="onDragEnd(even
 const whiteHTML = '<img ondragstart="onDragStart(event)" ondragend="onDragEnd(event)" ondragenter="onDragEnter(event)" ondragleave="onDragLeave(event)" class="white" draggable="true" src="img/white-piece.png">';
 const whiteKingHTML = '<img ondragstart="onDragStart(event)" ondragend="onDragEnd(event)" ondragenter="onDragEnter(event)" ondragleave="onDragLeave(event)" class="kingWhite" draggable="true" src="img/white-king-piece.png">';
 const redKingHTML = '<img ondragstart="onDragStart(event)" ondragend="onDragEnd(event)" ondragenter="onDragEnter(event)" ondragleave="onDragLeave(event)" class="kingRed" draggable="true" src="img/red-king-piece.png">';
-const moveAudioElement = new Audio("music/move.mp3");
-const winAudioElement = new Audio("music/win2.mp3");
 
 var dragged;
 let killPiece;
@@ -75,9 +73,6 @@ function checkAndAnnounceWinner(){
   if (countWhite === 0) {
     registerWinner = true;
     currentTurnEl.innerHTML = "WHITE WINS!";
-    winAudioElement.currentTime = 51;
-    winAudioElement.volume = 0.05;
-    winAudioElement.play();
     } else if (countRed === 0) {
     registerWinner = true;
     currentTurnEl.innerHTML = "RED WINS!";
@@ -145,6 +140,7 @@ function onDrop(event) {
   event.preventDefault();
   let dropId = event.target.id;
   let killId = "";
+  
 
   if (even(startingId[0])) {
     killId = (Math.round((parseInt(startingId) + parseInt(dropId))/2)).toString();
@@ -224,9 +220,6 @@ function onDrop(event) {
       event.target.style.background = "";
       dragged.parentNode.removeChild( dragged );
       event.target.appendChild( dragged );
-      moveAudioElement.currentTime = 0.6;
-      moveAudioElement.volume = 0.1;
-      moveAudioElement.play();
       if (dragged.className === "red") {
         board[parseInt(dropId[0])][parseInt(dropId[1])] = "red";
         kingsRow(event);
@@ -262,34 +255,6 @@ function onDrop(event) {
   }
   firstTurn = false;
 }
-
-function resetGame(){
-  numRedAcquired = 0;    // number of pieces acquired by red
-  numWhiteAcquired = 0;  
-  winAudioElement.currentTime = 0;
-  winAudioElement.pause();
-  let id = "";
-  board = [["white","white","white","white"], ["white","white","white","white"], ["white","white","white","white"], ["","","",""], ["","","",""], ["red","red","red","red"], ["red","red","red","red"], ["red","red","red","red"]];
-  currentPlayer = "red";
-  previousPlayer = null;
-  firstTurn = true;
-  registerWinner = false;
-  currentTurnEl.innerHTML = 'TURN:<img src="img/red-piece.png">';
-  whiteScoreEl.innerHTML = "WHITE: 0";
-  redScoreEl.innerHTML = "RED: 0";
-  for (let j=0; j < 4; j++) {
-    for (let i=0; i < 8; i++) {
-      id = i.toString() + j.toString();
-      if (board[i][j] === "red") {
-        document.getElementById(id).innerHTML = redHTML;
-      } else if (board[i][j] === "white") {
-          document.getElementById(id).innerHTML = whiteHTML;
-      } else if (board[i][j] === "") {
-          document.getElementById(id).innerHTML = "";
-      }
-    }
-  }
-};
 
 function mouseOverReset(){
   resetBtnEl.style.backgroundColor = "white";
