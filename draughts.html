@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" >
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet">
+    <title>SEAN SALAME CHECKERS GAME</title>
+</head> 
+<body>
+    <h1 id ="title" class="main-text">SEAN SALAME CHECKERS GAME </h1>
+    <h3 id="message" class="main-text"></h3>
+    <section id="board">
+        <div class="cell"></div>
+        <div id="00" class="active-cell" ondrop="onDrop(event)" ondragover="onDragOver(event)"><img ondragstart="onDragStart(event)" ondragend="onDragEnd(event)" ondragenter="onDragEnter(event)" ondragleave="onDragLeave(event)" class="white" draggable="true" src="img/white-piece.png"></div>
+        <div class="cell"></div>
+        <div id="01" class="active-cell" ondrop="onDrop(event)" ondragover="onDragOver(event)"><img ondragstart="onDragStart(event)" ondragend="onDragEnd(event)" ondragenter="onDragEnter(event)" ondragleave="onDragLeave(event)" class="white" draggable="true" src="img/white-piece.png"></div>
+        <div class="cell"></div>
+        <div id="02" class="active-cell" ondrop="onDrop(event)" ondragover="onDragOver(event)"><img ondragstart="onDragStart(event)" ondragend="onDragEnd(event)" ondragenter="onDragEnter(event)" ondragleave="onDragLeave(event)" class="white" draggable="true" src="img/white-piece.png"></div>
+        <div class="cell"></div>
+        <div id="03" class="active-cell" ondrop="onDrop(event)" ondragover="onDragOver(event)"><img ondragstart="onDragStart(event)" ondragend="onDragEnd(event)" ondragenter="onDragEnter(event)" ondragleave="onDragLeave(event)" class="white" draggable="true" src="img/white-piece.png"></div>
+        <div id="10" class="active-cell" ondrop="onDrop(event)" ondragover="onDragOver(event)"><img ondragstart="onDragStart(event)" ondragend="onDragEnd(event)" ondragenter="onDragEnter(event)" ondragleave="onDragLeave(event)" class="white" draggable="true" src="img/white-piece.png"></div>
+        <div class="cell"></div>
+        <div id="11" class="active-cell" ondrop="onDrop(event)" ondragover="onDragOver(event)"><img ondragstart="onDragStart(event)" ondragend="onDragEnd(event)" ondragenter="onDragEnter(event)" ondragleave="onDragLeave(event)" class="white" draggable="true" src="img/white-piece.png"></div>
+        <div class="cell"></div>
+        <div id="12" class="active-cell" ondrop="onDrop(event)" ondragover="onDragOver(event)"><img ondragstart="onDragStart(event)" ondragend="onDragEnd(event)" ondragenter="onDragEnter(event)" ondragleave="onDragLeave(event)" class="white" draggable="true" src="img/white-piece.png"></div>
+        <div class="cell"></div>
+        <div id="13" class="active-cell" ondrop="onDrop(event)" ondragover="onDragOver(event)"><img ondragstart="onDragStart(event)" ondragend="onDragEnd(event)" ondragenter="onDragEnter(event)" ondragleave="onDragLeave(event)" class="white" draggable="true" src="img/white-piece.png"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div id="20" class="active-cell" ondrop="onDrop(event)" ondragover="onDragOver(event)"><img ondragstart="onDragStart(event)" ondragend="onDragEnd(event)" ondragenter="onDragEnter(event)" ondragleave="onDragLeave(event)" class="white" draggable="true" src="img/white-piece.png"></div>
+        <div class="cell"></div>
+        <div id="21" class="active-cell" ondrop="onDrop(event)" ondragover="onDragOver(event)"><img ondragstart="onDragStart(event)" ondragend="onDragEnd(event)" ondragenter="onDragEnter(event)" ondragleave="onDragLeave(event)" class="white" draggable="true" src="img/white-piece.png"></div>
+        <div class="cell"></div>
+        <div id="22" class="active-cell" ondrop="onDrop(event)" ondragover="onDragOver(event)"><img ondragstart="onDragStart(event)" ondragend="onDragEnd(event)" ondragenter="onDragEnter(event)" ondragleave="onDragLeave(event)" class="white" draggable="true" src="img/white-piece.png"></div>
+        <div class="cell"></div>
+        <div id="23" class="active-cell" ondrop="onDrop(event)" ondragover="onDragOver(event)"><img ondragstart="onDragStart(event)" ondragend="onDragEnd(event)" ondragenter="onDragEnter(event)" ondragleave="onDragLeave(event)" class="white" draggable="true" src="img/white-piece.png"></div>
+        <div id="30" class="active-cell" ondrop="onDrop(event)" ondragover="onDragOver(event)"></div>
+        <div class="cell"></div>
+        <div id="31" class="active-cell" ondrop="onDrop(event)" ondragover="onDragOver(event)"></div>
+        <div class="cell"></div>
+        <div id="32" class="active-cell" ondrop="onDrop(event)" ondragover="onDragOver(event)"></div>
+        <div class="cell"></div>
+        <div id="33" class="active-cell" ondrop="onDrop(event)" ondragover="onDragOver(event)"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div id="40" class="active-cell" ondrop="onDrop(event)" ondragover="onDragOver(event)"></div>
+        <div class="cell"></div>
+        <div id="41" class="active-cell" ondrop="onDrop(event)" ondragover="onDragOver(event)"></div>
+        <div class="cell"></div>
+        <div id="42" class="active-cell" ondrop="onDrop(event)" ondragover="onDragOver(event)"></div>
+        <div class="cell"></div>
+        <div id="43" class="active-cell" ondrop="onDrop(event)" ondragover="onDragOver(event)"></div>
+        <div id="50" class="active-cell" ondrop="onDrop(event)" ondragover="onDragOver(event)"><img ondragstart="onDragStart(event)" ondragend="onDragEnd(event)" ondragenter="onDragEnter(event)" ondragleave="onDragLeave(event)" class="red" draggable="true" src="img/red-piece.png"></div>
+        <div class="cell"></div>
+        <div id="51" class="active-cell" ondrop="onDrop(event)" ondragover="onDragOver(event)"><img ondragstart="onDragStart(event)" ondragend="onDragEnd(event)" ondragenter="onDragEnter(event)" ondragleave="onDragLeave(event)" class="red" draggable="true" src="img/red-piece.png"></div>
+        <div class="cell"></div>
+        <div id="52" class="active-cell" ondrop="onDrop(event)" ondragover="onDragOver(event)"><img ondragstart="onDragStart(event)" ondragend="onDragEnd(event)" ondragenter="onDragEnter(event)" ondragleave="onDragLeave(event)" class="red" draggable="true" src="img/red-piece.png"></div>
+        <div class="cell"></div>
+        <div id="53" class="active-cell" ondrop="onDrop(event)" ondragover="onDragOver(event)"><img ondragstart="onDragStart(event)" ondragend="onDragEnd(event)" ondragenter="onDragEnter(event)" ondragleave="onDragLeave(event)" class="red" draggable="true" src="img/red-piece.png"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div id="60" class="active-cell" ondrop="onDrop(event)" ondragover="onDragOver(event)"><img ondragstart="onDragStart(event)" ondragend="onDragEnd(event)" ondragenter="onDragEnter(event)" ondragleave="onDragLeave(event)" class="red" draggable="true" src="img/red-piece.png"></div>
+        <div class="cell"></div>
+        <div id="61" class="active-cell" ondrop="onDrop(event)" ondragover="onDragOver(event)"><img ondragstart="onDragStart(event)" ondragend="onDragEnd(event)" ondragenter="onDragEnter(event)" ondragleave="onDragLeave(event)" class="red" draggable="true" src="img/red-piece.png"></div>
+        <div class="cell"></div>
+        <div id="62" class="active-cell" ondrop="onDrop(event)" ondragover="onDragOver(event)"><img ondragstart="onDragStart(event)" ondragend="onDragEnd(event)" ondragenter="onDragEnter(event)" ondragleave="onDragLeave(event)" class="red" draggable="true" src="img/red-piece.png"></div>
+        <div class="cell"></div>
+        <div id="63" class="active-cell" ondrop="onDrop(event)" ondragover="onDragOver(event)"><img ondragstart="onDragStart(event)" ondragend="onDragEnd(event)" ondragenter="onDragEnter(event)" ondragleave="onDragLeave(event)" class="red" draggable="true" src="img/red-piece.png"></div>
+        <div id="70" class="active-cell" ondrop="onDrop(event)" ondragover="onDragOver(event)"><img ondragstart="onDragStart(event)" ondragend="onDragEnd(event)" ondragenter="onDragEnter(event)" ondragleave="onDragLeave(event)" class="red" draggable="true" src="img/red-piece.png"></div>
+        <div class="cell"></div>
+        <div id="71" class="active-cell" ondrop="onDrop(event)" ondragover="onDragOver(event)"><img ondragstart="onDragStart(event)" ondragend="onDragEnd(event)" ondragenter="onDragEnter(event)" ondragleave="onDragLeave(event)" class="red" draggable="true" src="img/red-piece.png"></div>
+        <div class="cell"></div>
+        <div id="72" class="active-cell" ondrop="onDrop(event)" ondragover="onDragOver(event)"><img ondragstart="onDragStart(event)" ondragend="onDragEnd(event)" ondragenter="onDragEnter(event)" ondragleave="onDragLeave(event)" class="red" draggable="true" src="img/red-piece.png"></div>
+        <div class="cell"></div>
+        <div id="73" class="active-cell" ondrop="onDrop(event)" ondragover="onDragOver(event)"><img ondragstart="onDragStart(event)" ondragend="onDragEnd(event)" ondragenter="onDragEnter(event)" ondragleave="onDragLeave(event)" class="red" draggable="true" src="img/red-piece.png"></div>
+        <div class="cell"></div>
+    </section>
+    <section id="score-info">
+        <div id="red-score" class="info">RED: 0</div> 
+        <div id="current-turn" class="info">TURN: <img id="turn-image" src="img/red-piece.png"></div>
+        <div id="white-score" class="info">WHITE: 0</div>
+        <button id="reset">RESET</button>
+    </section>
+    <script src="DataBoard.js"></script>
+</body>
+</html>
