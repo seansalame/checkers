@@ -241,13 +241,13 @@ function onDrop(event) {
       }
   } // current turn
   if (currentPlayer === "white" && !registerWinner && dragWorked){
-    currentTurnEl.innerHTML = 'TURN:<img src="img/red-piece.png">'
+    currentTurnEl.innerHTML = 'TURN:OFER'
   } else if (currentPlayer === "red" && !registerWinner && dragWorked) {
-      currentTurnEl.innerHTML = 'TURN:<img src="img/white-piece.png">'
+      currentTurnEl.innerHTML = 'TURN:IDAN'
   } else if (currentPlayer === "kingWhite" && !registerWinner && dragWorked) {
-      currentTurnEl.innerHTML = 'TURN:<img src="img/red-piece.png">'
+      currentTurnEl.innerHTML = 'TURN:OFER'
   } else if (currentPlayer === "kingRed" && !registerWinner && dragWorked) {
-      currentTurnEl.innerHTML = 'TURN:<img src="img/white-piece.png">'
+      currentTurnEl.innerHTML = 'TURN:IDAN'
   }
   firstTurn = false;
 }
