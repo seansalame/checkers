@@ -47,6 +47,8 @@ text-align: center;
 }
 
 
+
+
 #red-score.info, #white-score.info {
   background-color: black;
   color: white;
@@ -66,8 +68,8 @@ text-align: center;
   width: 240px;
 }
 
-#current-turn.info {
-  background-color: black;
+  #current-turn.info {
+  background-color: rgb(0, 0, 0);
   color: white;
   font-family: 'Lato', sans-serif;
   border-radius: 25px;
@@ -78,7 +80,7 @@ text-align: center;
   width: 165px;
   height: 175px;
   text-align: center;
-  
+  margin: -30px 0px 0px -5px;
 }
 
 #score-info {

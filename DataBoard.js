@@ -22,11 +22,9 @@ let registerWinner = false;
 let activeCellsEl = document.querySelectorAll(".active-cell");
 let redScoreEl = document.getElementById("red-score");
 let whiteScoreEl = document.getElementById("white-score");
-let resetBtnEl = document.getElementById("reset");
 let currentTurnEl = document.getElementById("current-turn");
 
 // Add Event Listeners
-resetBtnEl.addEventListener("click", resetGame);
 resetBtnEl.addEventListener("mouseover", mouseOverReset);
 resetBtnEl.addEventListener("mouseout", returnResetButton);
 for (i=0; i < 32; i++){
@@ -37,14 +35,14 @@ for (i=0; i < 32; i++){
   activeCellsEl[i].addEventListener("dragleave", onDragLeave);
   activeCellsEl[i].addEventListener("drop", onDrop);
 }
-
+ // Update the score
 function updateScore(red, white){
     numRedAcquired += red;
     numWhiteAcquired += white;
-    redScoreEl.innerHTML = "RED: " + numRedAcquired;
-    whiteScoreEl.innerHTML = "WHITE: " + numWhiteAcquired;
+    redScoreEl.innerHTML = "OFER: " + numRedAcquired;
+    whiteScoreEl.innerHTML = "IDAN: " + numWhiteAcquired;
 };
-
+ // Who is the king by cell ID
 function kingsRow(event) {
   if (["00", "01", "02", "03"].includes(event.target.id)){
     document.getElementById(event.target.id).innerHTML = redKingHTML;
@@ -52,11 +50,11 @@ function kingsRow(event) {
   } else if (["70", "71", "72", "73"].includes(event.target.id)){
     document.getElementById(event.target.id).innerHTML = whiteKingHTML;
     kingPiece = true;
-  } else {
+  } else {  
     kingPiece = false;
   }
 }
-
+ // who is the winner
 function checkAndAnnounceWinner(){
   let countWhite = 0;
   let countRed = 0;
@@ -72,12 +70,11 @@ function checkAndAnnounceWinner(){
 
   if (countWhite === 0) {
     registerWinner = true;
-    currentTurnEl.innerHTML = "WHITE WINS!";
+    currentTurnEl.innerHTML = "IDAN WINS!";
     } else if (countRed === 0) {
     registerWinner = true;
-    currentTurnEl.innerHTML = "RED WINS!";
-    winAudioElement.volume = 0.05;
-    winAudioElement.play();
+    currentTurnEl.innerHTML = "OFER WINS!";
+    
   }
 };
 
@@ -87,8 +84,7 @@ function even(number){
   }
 }
 
-// dragging crap :D
-
+// dragging 
 function onDragStart(event){
   dragged = event.target;
   currentPlayer = dragged.className;
@@ -141,7 +137,7 @@ function onDrop(event) {
   let dropId = event.target.id;
   let killId = "";
   
-
+// active cells in the board
   if (even(startingId[0])) {
     killId = (Math.round((parseInt(startingId) + parseInt(dropId))/2)).toString();
   } else if (!even(startingId[0])){
@@ -233,7 +229,7 @@ function onDrop(event) {
       }
     }
   }
-
+// who is the winner
   checkAndAnnounceWinner();
   if (dragWorked && !registerWinner){
     previousPlayer = currentPlayer;
@@ -243,7 +239,7 @@ function onDrop(event) {
       } else if (currentPlayer === "white") {
         previousPlayer = "red";
       }
-  }
+  } // current turn
   if (currentPlayer === "white" && !registerWinner && dragWorked){
     currentTurnEl.innerHTML = 'TURN:<img src="img/red-piece.png">'
   } else if (currentPlayer === "red" && !registerWinner && dragWorked) {
@@ -256,12 +252,3 @@ function onDrop(event) {
   firstTurn = false;
 }
 
-function mouseOverReset(){
-  resetBtnEl.style.backgroundColor = "white";
-  resetBtnEl.style.color = "black";
-}
-
-function returnResetButton(){
-  resetBtnEl.style.backgroundColor = "black";
-  resetBtnEl.style.color = "white";
-}
