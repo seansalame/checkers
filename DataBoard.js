@@ -18,7 +18,7 @@ let firstTurn = true;
 let ableToMove, kill, dragWorked;
 let registerWinner = false;
 
-// Cache Elements from HTML to JS
+// Elements from HTML to JS
 let activeCellsEl = document.querySelectorAll(".active-cell");
 let redScoreEl = document.getElementById("red-score");
 let whiteScoreEl = document.getElementById("white-score");
